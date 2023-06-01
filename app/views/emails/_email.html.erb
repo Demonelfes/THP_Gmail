@@ -1,0 +1,14 @@
+
+<% if email.read == false %>
+<div class="card text-white mb-3" style="background: red">
+    <p> <%= email.object %> </p>
+    <p><%=  link_to "Voir le message", email_path(email.id), data: { turbo_frame: "voir_message"} %></p>
+</div>
+    <hr>
+<% elsif email.read == true %>
+<div class="card text-white mb-3" style="background: green">
+    <p> <%= email.object %> </p>
+    <%=  link_to "Revoir le message", email_path(email.id), data: { turbo_frame: "voir_message"} %>
+    <hr>
+</div>
+    <%end%>
